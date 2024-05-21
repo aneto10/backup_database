@@ -41,6 +41,21 @@ Este é um script em Python para realizar backups de bancos de dados MariaDB. O 
     BACKUP_PATH=/caminho/para/salvar/o/backup
     MARIADB_DUMP_PATH=C:\\Program Files\\MariaDB 10.5\\bin\\mariadb-dump.exe
     ```
+## Explicação das Variáveis de Ambiente
+    
+    DB_HOST: O endereço do servidor MariaDB (por exemplo, localhost).
+    DB_USER: O nome do usuário do banco de dados.
+    DB_PASSWORD: A senha do usuário do banco de dados.
+    DB_NAME: O nome do banco de dados que você deseja fazer backup.
+    BACKUP_PATH: O caminho onde o arquivo de backup será salvo.
+    MARIADB_DUMP_PATH: O caminho completo para o executável mariadb-dump.exe.
+    
+    
+## Funcionalidades
+
+    1. Backup Completo: Inclui estrutura do banco de dados, dados, stored procedures, triggers e eventos.
+    2. Progresso do Backup: Exibe o progresso do backup no terminal, atualizado em tempo real
+
 
 ## Uso
 
@@ -48,3 +63,12 @@ Execute o script para fazer o backup do banco de dados:
 
 ```sh
 python backup_mariadb.py
+```
+
+
+## Instruções Adicionais
+
+- **Estimativa do Tamanho do Banco de Dados**:
+  - A estimativa do tamanho do banco de dados (`estimated_size`) é configurada no script Python. Este valor pode ser ajustado conforme necessário para melhorar a precisão do progresso exibido.
+- **Atualização em Tempo Real**:
+  - O progresso do backup é atualizado em intervalos regulares (a cada 5 segundos por padrão). Você pode ajustar esse intervalo modificando o valor do `time.sleep(5)` na função de monitoramento.
