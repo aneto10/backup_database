@@ -29,7 +29,6 @@ dump_cmd = [
     '--triggers',  # Inclui triggers
     '--events'     # Inclui eventos
 ]
-print(dump_cmd)
 # Executar o comando mariadb-dump
 with open(backup_file, 'w') as f:
     result = subprocess.run(dump_cmd, stdout=f, stderr=subprocess.PIPE)
